@@ -1,6 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @user.microposts.first %>
+<% if @user.microposts.any? %>
+  <%= render @user.microposts.first %>
+<% else %>
+  There are no microposts for the user
+<% end %>
 
 <div>
   <%= link_to "Edit this user", edit_user_path(@user) %> |
